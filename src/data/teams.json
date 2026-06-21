@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Los Pibes FC", "dt": "Carlos Bilardo", "logo": "🔴" },
+  { "id": 2, "name": "Deportivo Barrio", "dt": "Marcelo Gallardo", "logo": "🔵" },
+  { "id": 3, "name": "Atlético Esquina", "dt": "Diego Simeone", "logo": "🟡" },
+  { "id": 4, "name": "Unión Potrero", "dt": "Ricardo Gareca", "logo": "🟢" },
+  { "id": 5, "name": "Real Cancha", "dt": "Martín Demichelis", "logo": "⚪" },
+  { "id": 6, "name": "Racing del Fondo", "dt": "Gustavo Costas", "logo": "🟣" }
+]
