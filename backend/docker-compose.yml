@@ -1,0 +1,57 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: liga-da-tutti-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: liga
+      MONGO_INITDB_ROOT_PASSWORD: liga_dev_password
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mongo-express:
+    image: mongo-express:1
+    container_name: liga-da-tutti-mongo-express
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMINUSERNAME: liga
+      ME_CONFIG_MONGODB_ADMINPASSWORD: liga_dev_password
+      ME_CONFIG_BASICAUTH: false
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: liga-da-tutti-backend
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      MONGO_URI: mongodb://liga:liga_dev_password@mongo:27017/liga_da_tutti?authSource=admin
+      JWT_SECRET: ${JWT_SECRET:-liga-da-tutti-dev-secret-change-me}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-1d}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173}
+    volumes:
+      - backend_uploads:/app/uploads/teams
+
+volumes:
+  mongo_data:
+  backend_uploads:
