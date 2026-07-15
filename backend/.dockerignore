@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+.env
+.git
+.gitignore
+uploads/teams/*
+!uploads/teams/.gitkeep
+requests
+*.log
