@@ -6,9 +6,15 @@ export default function StatCard({
   value,
   icon = "sports_soccer",
   accent = false,
+  compact = false,
+  valueClassName,
 }) {
   return (
-    <div className="bg-card border border-border rounded-lg p-md flex flex-col justify-between h-36">
+    <div
+      className={cn(
+        "bg-card border border-border rounded-lg flex flex-col justify-between",
+        compact ? "h-28 p-sm" : "h-36 p-md",
+      )}>
       <div className="flex justify-between items-start gap-sm">
         <h3 className="font-label-md text-label-md text-muted-foreground uppercase tracking-wider">
           {label}
@@ -27,6 +33,7 @@ export default function StatCard({
         className={cn(
           "font-score-display text-score-display",
           accent ? "text-primary" : "text-foreground",
+          valueClassName,
         )}>
         {value}
       </span>

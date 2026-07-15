@@ -75,57 +75,68 @@ export default function Stats() {
         </div>
       ) : (
         <>
-          <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-md">
+          <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-sm">
             <StatCard
+              compact
               label="Total Partidos"
               value={stats.totalMatches}
               icon="list"
             />
             <StatCard
+              compact
               label="Finalizados"
               value={stats.finishedCount}
               icon="check_circle"
             />
             <StatCard
+              compact
               label="Programados"
               value={stats.scheduledCount}
               icon="schedule"
             />
             <StatCard
+              compact
               label="Cancelados"
               value={stats.cancelledCount}
               icon="cancel"
             />
             <StatCard
+              compact
               label="Goles Totales"
               value={stats.totalGoals}
               icon="sports_soccer"
               accent
             />
             <StatCard
+              compact
               label="Promedio Goles"
               value={stats.avgGoals}
               icon="leaderboard"
               accent
             />
             <StatCard
+              compact
               label="Tarjetas Amarillas"
               value={stats.totalYellowCards}
               icon="crop_portrait"
             />
             <StatCard
+              compact
               label="Tarjetas Rojas"
               value={stats.totalRedCards}
               icon="crop_portrait"
             />
             <StatCard
+              compact
               label="Total Torneos"
               value={stats.totalTournaments}
               icon="trophy"
             />
             <StatCard
+              compact
               label="Equipo Líder"
               value={leaderName}
+              valueClassName="text-headline-md break-words"
               icon="leaderboard"
               accent
             />

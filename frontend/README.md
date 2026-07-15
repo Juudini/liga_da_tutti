@@ -107,23 +107,51 @@ Otras decisiones de diseño relevantes:
 
 ## Capturas de pantalla
 
-### Login
+### Acceso
 
-![Login](/src/assets/screen_login.png)
+#### Inicio de sesión
 
-### Admin Dashboard
+![Pantalla de inicio de sesión](./src/assets/screen_login.png)
 
-![Admin Dashboard](/src/assets/screen_admin.png)
+#### Registro
 
-### Usuario - home
+![Pantalla de registro](./src/assets/screen_register.png)
 
-![Usuario - home](/src/assets/screen_common.png)
+### Administrador
 
-### Usuario - organizar
+#### Panel de estadísticas
 
-![Usuario - organizar](/src/assets/screen_organizer.png)
+![Panel de estadísticas del administrador](./src/assets/screen_admin_stats.png)
 
-> Nota: las capturas corresponden a una versión anterior de la interfaz (previa a torneos, subida de imágenes y estadísticas por torneo); tengo que actualizarlas xd tarea para mi yo del futuro
+#### Gestión de equipos
+
+![Gestión de equipos del administrador](./src/assets/screen_admin_teams.png)
+
+#### Gestión de torneos
+
+![Gestión de torneos del administrador](./src/assets/screen_admin_tournaments.png)
+
+### Organizador
+
+#### Fixture
+
+![Fixture del organizador](./src/assets/screen_common_fixture.png)
+
+#### Crear partido
+
+![Formulario para crear un partido](./src/assets/screen_common_matches_new.png)
+
+#### Editar partido
+
+![Formulario para editar un partido](./src/assets/screen_common_edit_game.png)
+
+#### Gestión de equipos
+
+![Gestión de equipos del organizador](./src/assets/screen_common_teams.png)
+
+#### Gestión de torneos
+
+![Gestión de torneos del organizador](./src/assets/screen_common_tournaments.png)
 
 ## 🔗 Links
 
